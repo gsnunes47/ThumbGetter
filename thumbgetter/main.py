@@ -10,8 +10,9 @@ def homepage():
     if form.validate_on_submit():
         url = str(form.url.data)
         id = url.split('v=')[1]
-        return redirect(f'https://i3.ytimg.com/vi/{id}/maxresdefault.jpg')
-    return render_template("home.html", form=form)
+        img = f'https://i3.ytimg.com/vi/{id}/maxresdefault.jpg'
+        print(img)
+    return render_template("home2.html", form=form, img=img)
 
 if __name__ == '__main__':
     app.run(debug=True)
